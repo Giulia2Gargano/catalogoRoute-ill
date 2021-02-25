@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { ContaComponent } from './conta/conta.component';
 import { MainComponent } from './main/main.component';
 import { CercaComponent } from './cerca/cerca.component';
+import { FormPanelComponent } from './form-panel/form-panel.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContaComponent,
     MainComponent,
-    CercaComponent
+    CercaComponent,
+    FormPanelComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

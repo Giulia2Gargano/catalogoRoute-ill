@@ -1,5 +1,5 @@
-export class Prodotto{
-    codice="";
-    descrizione="";
-    prezzo=0;
+export class Prodotto {
+    codice = "";
+    descrizione = "";
+    prezzo = 0;
 }
