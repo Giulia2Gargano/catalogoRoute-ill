@@ -1,7 +1,7 @@
 <h1>Catalogo prodotti</h1>
-<app-form-panel (contaOut)="vaiAPaginaConta($event)" (cercaOut)="vaiAPaginaCerca($event)" ></app-form-panel>
+<app-form-panel (contaOut)="vaiAPaginaConta($event)" (cercaOut)="vaiAPaginaCerca($event)"></app-form-panel>
 <br>
-<table>
+<table *ngIf="med.prodotti.length>0">
     <tr>
         <th>Codice</th>
         <th>Descrizione</th>
