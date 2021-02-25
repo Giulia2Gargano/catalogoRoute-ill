@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MediatorService } from '../mediator.service';
+import { Prodotto } from '../prodotto';
 
 @Component({
   selector: 'app-cerca',
@@ -8,9 +10,27 @@ import { MediatorService } from '../mediator.service';
 })
 export class CercaComponent implements OnInit {
 
-  constructor(public med:MediatorService) { }
+  criterioRicerca: string;
+  filtroProdotti: Prodotto[] = [];
+  showProdotti: boolean = true;
+  showFiltroProdotti: boolean=false;
+
+  constructor(public med: MediatorService, private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  mainPage() {
+    this.router.navigateByUrl("/main-page");
+  }
+  cerca() {
+    this.showProdotti = false;
+    this.showFiltroProdotti = true;
+    this.filtroProdotti = this.med.prodotti;
+    this.filtroProdotti = this.filtroProdotti.filter(r => {
+      //r.codice.(this.criterioRicerca) || 
+      //r.codice.endsWith(this.criterioRicerca) //||
+     // r.descrizione.startsWith(this.criterioRicerca) //||
+      //r.descrizione.includes(this.criterioRicerca)
+    });
+  }
 }

@@ -1,1 +1,30 @@
-<p>cerca works!</p>
+<input type="text" placeholder="Inserisci Criterio Ricerca" [(ngModel)]="criterioRicerca">
+<button (click)="cerca()">Cerca</button>
+<button (click)="mainPage()">Main Page</button>
+
+<table *ngIf="showProdotti">
+    <tr>
+        <th>Codice</th>
+        <th>Descrizione</th>
+        <th>Prezzo</th>
+    </tr>
+    <tr *ngFor="let g of med.prodotti, index as i">
+        <td>{{g.codice}}</td>
+        <td>{{g.descrizione}}</td>
+        <td>{{g.prezzo}}</td>
+        <td><button (click)="cancella(i)">X</button></td>
+    </tr>
+</table>
+<table *ngIf="showFiltroProdotti">
+    <tr>
+        <th>Codice</th>
+        <th>Descrizione</th>
+        <th>Prezzo</th>
+    </tr>
+    <tr *ngFor="let g of filtroProdotti, index as i">
+        <td>{{g.codice}}</td>
+        <td>{{g.descrizione}}</td>
+        <td>{{g.prezzo}}</td>
+        <td><button (click)="cancella(i)">X</button></td>
+    </tr>
+</table>
