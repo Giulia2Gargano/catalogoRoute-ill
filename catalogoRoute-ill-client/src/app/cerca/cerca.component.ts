@@ -12,8 +12,8 @@ export class CercaComponent implements OnInit {
 
   criterioRicerca: string;
   filtroProdotti: Prodotto[] = [];
-  showProdotti: boolean = true;
-  showFiltroProdotti: boolean=false;
+  //showProdotti: boolean = true;
+  showFiltroProdotti: boolean = false;
 
   constructor(public med: MediatorService, private router: Router) { }
 
@@ -23,14 +23,10 @@ export class CercaComponent implements OnInit {
     this.router.navigateByUrl("/main-page");
   }
   cerca() {
-    this.showProdotti = false;
+    //this.showProdotti = false;
     this.showFiltroProdotti = true;
     this.filtroProdotti = this.med.prodotti;
-    this.filtroProdotti = this.filtroProdotti.filter(r => {
-      //r.codice.(this.criterioRicerca) || 
-      //r.codice.endsWith(this.criterioRicerca) //||
-     // r.descrizione.startsWith(this.criterioRicerca) //||
-      //r.descrizione.includes(this.criterioRicerca)
-    });
+    this.filtroProdotti = this.filtroProdotti.filter(r => r.codice.includes(this.criterioRicerca) ||
+      r.descrizione.includes(this.criterioRicerca));
   }
 }
