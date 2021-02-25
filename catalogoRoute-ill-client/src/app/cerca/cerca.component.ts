@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MediatorService } from '../mediator.service';
 
 @Component({
   selector: 'app-cerca',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CercaComponent implements OnInit {
 
-  constructor() { }
+  constructor(public med:MediatorService) { }
 
   ngOnInit(): void {
   }

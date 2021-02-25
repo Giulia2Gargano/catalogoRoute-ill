@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MediatorService } from '../mediator.service';
 
 @Component({
   selector: 'app-conta',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContaComponent implements OnInit {
 
-  constructor() { }
+  constructor(public med:MediatorService) { }
 
   ngOnInit(): void {
   }
