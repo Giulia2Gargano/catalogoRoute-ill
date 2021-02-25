@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MediatorService } from '../mediator.service';
 
 @Component({
@@ -8,9 +9,12 @@ import { MediatorService } from '../mediator.service';
 })
 export class ContaComponent implements OnInit {
 
-  constructor(public med:MediatorService) { }
+  constructor(public med:MediatorService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  mainPage(){
+    this.router.navigateByUrl("/main-page");
+  }
 }

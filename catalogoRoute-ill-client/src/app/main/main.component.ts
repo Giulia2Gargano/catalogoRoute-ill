@@ -24,6 +24,10 @@ export class MainComponent implements OnInit {
     console.log(s);
   }
 
+  cancella(i:number){
+    this.med.prodotti.splice(i,1);
+  }
+
 
 
 

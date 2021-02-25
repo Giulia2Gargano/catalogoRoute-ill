@@ -1,2 +1,16 @@
 <h1>Catalogo prodotti</h1>
 <app-form-panel (contaOut)="vaiAPaginaConta($event)" (cercaOut)="vaiAPaginaCerca($event)" ></app-form-panel>
+<br>
+<table>
+    <tr>
+        <th>Codice</th>
+        <th>Descrizione</th>
+        <th>Prezzo</th>
+    </tr>
+    <tr *ngFor="let c of med.prodotti, index as i">
+        <td>{{c.codice}}</td>
+        <td>{{c.descrizione}}</td>
+        <td>{{c.prezzo}}</td>
+        <td> <button (click)="cancella(i)">X</button></td>
+    </tr>
+</table>
