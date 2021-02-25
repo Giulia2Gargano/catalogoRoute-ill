@@ -12,8 +12,7 @@ export class CercaComponent implements OnInit {
 
   criterioRicerca: string;
   filtroProdotti: Prodotto[] = [];
-  //showProdotti: boolean = true;
-  showFiltroProdotti: boolean = false;
+
 
   constructor(public med: MediatorService, private router: Router) { }
 
@@ -23,10 +22,12 @@ export class CercaComponent implements OnInit {
     this.router.navigateByUrl("/main-page");
   }
   cerca() {
-    //this.showProdotti = false;
-    this.showFiltroProdotti = true;
     this.filtroProdotti = this.med.prodotti;
-    this.filtroProdotti = this.filtroProdotti.filter(r => r.codice.includes(this.criterioRicerca) ||
-      r.descrizione.includes(this.criterioRicerca));
+    this.filtroProdotti = this.filtroProdotti.filter(r => r.codice.includes(this.criterioRicerca) || r.descrizione.includes(this.criterioRicerca));
+  }
+
+  cancella(i: number) {
+    this.med.prodotti.splice(i, 1);
+    this.filtroProdotti.splice(i, 1);
   }
 }

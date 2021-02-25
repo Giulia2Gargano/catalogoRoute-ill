@@ -6,7 +6,7 @@
 <button (click)="mainPage()">Main Page</button>
 <br>
 <br>
-<table>
+<table *ngIf="filtroProdotti.length>0">
     <tr>
         <th>Codice</th>
         <th>Descrizione</th>
